@@ -1,0 +1,10 @@
+api = "0.2"
+
+[buildpack]
+id = "buildpacks/empty"
+version = "0.0.1"
+name = "Empty Buildpack"
+homepage = "https://github.com/kayhide/nix-builder/buildpacks/empty"
+
+[[stacks]]
+id = "github.com/kayhide/nix-builder/buildpacks/empty"

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+echo "---> Building Empty Buildpack"
+echo "---> Done"
