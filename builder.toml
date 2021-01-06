@@ -1,0 +1,12 @@
+[[buildpacks]]
+uri = "buildpacks/empty.cnb"
+
+[[order]]
+  [[order.group]]
+  id = "buildpacks/empty"
+  version = "0.0.1"
+
+[stack]
+id = "github.com/kayhide/nix-builder"
+run-image = "nix-builder:run"
+build-image = "nix-builder:build"

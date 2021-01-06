@@ -1,0 +1,13 @@
+FROM nixos/nix:2.3
+
+LABEL io.buildpacks.stack.id="github.com/kayhide/nix-builder"
+
+RUN addgroup --gid 1000 builder
+RUN adduser -D -g "" -u 1000 -G builder builder
+
+USER builder
+RUN id
+
+ENV CNB_STACK_ID="github.com/kayhide/nix-builder"
+ENV CNB_USER_ID="1000"
+ENV CNB_GROUP_ID="1000"
