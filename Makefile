@@ -20,3 +20,12 @@ build-image: images/Dockerfile.build
 builder:
 	pack create-builder buildpacks-nix/builder --config ./builder.toml
 .PHONY: builder
+
+
+samples: samples-app-bash
+.PHONY: samples
+
+samples-app-bash:
+	cd samples/app-bash && \
+	pack build buildpacks-nix-samples-app-bash --builder buildpacks-nix/builder
+.PHONY: samples-app-bash
