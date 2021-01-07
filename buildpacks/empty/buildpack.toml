@@ -4,7 +4,7 @@ api = "0.2"
 id = "buildpacks/empty"
 version = "0.0.1"
 name = "Empty Buildpack"
-homepage = "https://github.com/kayhide/nix-builder/buildpacks/empty"
+homepage = "https://github.com/kayhide/buildpacks-nix/buildpacks/empty"
 
 [[stacks]]
-id = "github.com/kayhide/nix-builder"
+id = "kayhide/buildpacks-nix/builder"

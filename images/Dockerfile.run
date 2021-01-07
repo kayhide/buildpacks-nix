@@ -1,3 +1,3 @@
 FROM nixos/nix:2.3
 
-LABEL io.buildpacks.stack.id="github.com/kayhide/nix-builder"
+LABEL io.buildpacks.stack.id="kayhide/buildpacks-nix/builder"

@@ -7,6 +7,6 @@ uri = "buildpacks/empty.cnb"
   version = "0.0.1"
 
 [stack]
-id = "github.com/kayhide/nix-builder"
-run-image = "nix-builder:run"
-build-image = "nix-builder:build"
+id = "kayhide/buildpacks-nix/builder"
+run-image = "buildpacks-nix-run"
+build-image = "buildpacks-nix-build"
