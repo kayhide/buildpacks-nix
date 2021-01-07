@@ -1,12 +1,22 @@
-image-build: images/Dockerfile.build
-	cd images && docker build -t nix-builder:build -f ./Dockerfile.build .
+all: buildpacks/empty.cnb run-image build-image builder
+.PHONY: all
 
-image-run: images/Dockerfile.run
-	cd images && docker build -t nix-builder:run -f ./Dockerfile.run .
 
-empty-buildpack:
+buildpacks/empty.cnb: buildpacks/empty-package.toml $(shell find buildpacks/empty -type f)
+buildpacks/empty.cnb:
 	cd buildpacks && \
 	pack package-buildpack empty.cnb --config ./empty-package.toml --format file
 
+run-image: images/Dockerfile.run
+	cd images && \
+	docker build -t buildpacks-nix-run -f ./Dockerfile.run .
+.PHONY: run-image
+
+build-image: images/Dockerfile.build
+	cd images && \
+	docker build -t buildpacks-nix-build -f ./Dockerfile.build .
+.PHONY: build-image
+
 builder:
-	pack create-builder nix-builder --config ./builder.toml
+	pack create-builder buildpacks-nix/builder --config ./builder.toml
+.PHONY: builder
