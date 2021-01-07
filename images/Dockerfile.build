@@ -2,6 +2,7 @@ FROM nixos/nix:2.3
 
 LABEL io.buildpacks.stack.id="github.com/kayhide/nix-builder"
 
+RUN nix-env -i bash
 RUN addgroup --gid 1000 builder
 RUN adduser -D -g "" -u 1000 -G builder builder
 
